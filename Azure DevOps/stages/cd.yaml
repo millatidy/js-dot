@@ -8,7 +8,7 @@ parameters:
   - name: tag
     type: string
     default: 'latest'
-- stage:
+- stage: Deploy
   displayName: 'Deploy to Kubernetes'
   dependsOn: Build
   jobs:
