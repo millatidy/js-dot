@@ -1,16 +1,3 @@
-# parameters:
-#   - name: imageRepository
-#     type: string
-#     default: 'voteapp'
-#   - name: dockerfilePath
-#     type: string
-#     default: 'azure-vote/Dockerfile'
-#   - name: dockerRegistryServiceConnection
-#     type: string
-#     default: 'myDockerRegistryServiceConnection'
-#   - name: tag
-#     type: string
-#     default: 'latest'
 stages:
 - stage: Build
   jobs:

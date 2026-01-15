@@ -2,6 +2,6 @@ variables:
   resourceGroup: rg-lbg-voteapp-test-uks
   dockerRegistryServiceConnection: '<docker-registry-service-connection-id>'
   imageRepository: 'dottestjs-gafududdgnf8hehc.azurecr.io'
-  containerRegistry: dockerRegistryServiceConnection1
-  dockerfilePath: '$(Build.SourcesDirectory)/app/Dockerfile'
+  containerRegistry: mcr.microsoft.com
+  dockerfilePath: '$(Build.SourcesDirectory)/azure-vote/Dockerfile'
   tag: '$(Build.BuildId)'

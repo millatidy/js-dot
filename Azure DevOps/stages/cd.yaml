@@ -6,7 +6,7 @@ parameters:
     type: string
     default: 'latest'
 stages:
-- stage:
+- stage: Deploy
   displayName: 'Deploy to Kubernetes'
   dependsOn: Build
   jobs:
