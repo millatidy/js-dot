@@ -5,12 +5,13 @@ parameters:
   - name: tag
     type: string
     default: 'latest'
+
 stages:
 - stage: Deploy
   displayName: 'Deploy to Kubernetes'
   dependsOn: Build
   jobs:
-  - deployment: DeployToAKS
+  - deployment:
     condition: ne(variables['Build.Reason'], 'PullRequest')
     environment: 'aks-uks-dev'
     strategy:
@@ -19,10 +20,11 @@ stages:
           steps:
           - download: current
             artifact: $(manifestName).yaml
+          
           - task: KubernetesManifest@0
             displayName: Deploy
             inputs:
-              # kubernetesServiceConnection: someK8sSC1
+              kubernetesServiceConnection: $(kubernetesServiceConnection)
               namespace: default
               manifests: |
                 $(Pipeline.Workspace)/$(manifestName).yaml

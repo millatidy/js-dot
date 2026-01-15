@@ -1,5 +1,6 @@
 stages:
 - stage: Build
+  displayName: 'Build push image and prepare manifest'
   jobs:
   - job:
     steps:
@@ -9,7 +10,7 @@ stages:
         command: buildAndPush
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
-        # containerRegistry: $(containerRegistry)
+        containerRegistry: $(containerRegistry)
         tags: |
           $(tag)
     
