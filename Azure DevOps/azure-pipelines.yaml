@@ -1,0 +1,14 @@
+name: az-dot-test-uks
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+- template: variables/vars.yaml
+
+stages:
+- template: stages/ci.yaml
+- template: stages/cd.yaml
