@@ -1,6 +1,14 @@
 parameters:
-...
-- stage: ...
+  - name: imageRepository
+    type: string
+    default: 'voteapp'
+  - name: dockerRegistryServiceConnection
+    type: string
+    default: 'myDockerRegistryServiceConnection'
+  - name: tag
+    type: string
+    default: 'latest'
+- stage:
   displayName: 'Deploy to Kubernetes'
   dependsOn: Build
   jobs:
